@@ -1,0 +1,81 @@
+variable "rancherInstance" {
+    description = "Target Rancher instance to deploy to"
+    type = string
+    default = ""
+}
+
+variable "rancherAccess" { 
+    description = "Rancher API Access key"
+    type = string
+    default = ""
+}
+
+variable "rancherSecret" {
+    description = "Rancher API Secret key"
+    type = string
+    default = ""
+}
+
+variable "rancherSecurity" {
+    description = "Rancher TLS Verification (Is the Rancher instance Insecure?)"
+    type = bool
+    default = true
+}
+
+variable "rancherClusterName" {
+    description = "Cluster Name"
+    type = string
+    default = ""
+}
+variable "kubeVersion" {
+    description = "Kubernetes version, Currently supports RKE2 and K3s (Default K3s for speed)"
+    type = string
+    default = "v1.21.4+k3s1"
+}
+variable "nodeQTY" {
+    description = "Number of Nodes wanted in the cluster"
+    type = number
+    default = 1
+  
+}
+variable "awsSecret" {
+    description = "AWS Secret Key"
+    type = string
+    default = ""
+}
+
+variable "awsAccess" {
+    description = "AWS Access Key"
+    type = string
+    default = ""
+}
+
+variable "awsRegion" {
+    description = "AWS Deployment region"
+    type = string
+    default = "eu-west-1"
+}
+
+variable "awsAMI" {
+    description = "AWS ec2 AMI (Defualt is Ubuntu)"
+    type = string
+    default = "ami-00c90dbdc12232b58"
+}
+
+variable "awsAvailibilityZone" {
+    description = "AWS Availibility zone"
+    type = string
+    default = "c"
+}
+
+variable "awsVPC" {
+    description = "AWS VPC"
+    type = string
+    default = ""
+}
+
+variable "awsSubnet" {
+    description = "AWS VPC Subnet"
+    type = string
+    default = ""
+}

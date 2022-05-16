@@ -1,0 +1,189 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # rancher2_cloud_credential.nelson will be created
+  + resource "rancher2_cloud_credential" "nelson" {
+      + annotations = (known after apply)
+      + driver      = (known after apply)
+      + id          = (known after apply)
+      + labels      = (known after apply)
+      + name        = "nelson"
+
+      + amazonec2_credential_config {
+          + access_key = (sensitive value)
+          + secret_key = (sensitive value)
+        }
+    }
+
+  # rancher2_cluster_v2.nelson-k3s will be created
+  + resource "rancher2_cluster_v2" "nelson-k3s" {
+      + annotations                              = (known after apply)
+      + cluster_registration_token               = (sensitive value)
+      + cluster_v1_id                            = (known after apply)
+      + default_cluster_role_for_project_members = "user"
+      + enable_network_policy                    = false
+      + fleet_namespace                          = "fleet-default"
+      + id                                       = (known after apply)
+      + kube_config                              = (sensitive value)
+      + kubernetes_version                       = "v1.21.4+k3s1"
+      + labels                                   = (known after apply)
+      + name                                     = "nelson-k3s"
+      + resource_version                         = (known after apply)
+
+      + rke_config {
+          + etcd {
+              + disable_snapshots      = (known after apply)
+              + snapshot_retention     = (known after apply)
+              + snapshot_schedule_cron = (known after apply)
+
+              + s3_config {
+                  + bucket                = (known after apply)
+                  + cloud_credential_name = (known after apply)
+                  + endpoint              = (known after apply)
+                  + endpoint_ca           = (known after apply)
+                  + folder                = (known after apply)
+                  + region                = (known after apply)
+                  + skip_ssl_verify       = (known after apply)
+                }
+            }
+
+          + machine_pools {
+              + annotations         = (known after apply)
+              + control_plane_role  = true
+              + drain_before_delete = false
+              + etcd_role           = true
+              + labels              = (known after apply)
+              + name                = "pool1"
+              + paused              = false
+              + quantity            = 1
+              + worker_role         = true
+
+              + machine_config {
+                  + kind = (known after apply)
+                  + name = (known after apply)
+                }
+            }
+
+          + machine_selector_config {
+              + config = (known after apply)
+
+              + machine_label_selector {
+                  + match_labels = (known after apply)
+
+                  + match_expressions {
+                      + key      = (known after apply)
+                      + operator = (known after apply)
+                      + values   = (known after apply)
+                    }
+                }
+            }
+        }
+    }
+
+  # rancher2_machine_config_v2.nelson-ec2 will be created
+  + resource "rancher2_machine_config_v2" "nelson-ec2" {
+      + annotations      = (known after apply)
+      + fleet_namespace  = "fleet-default"
+      + generate_name    = "nelson-ec2"
+      + id               = (known after apply)
+      + kind             = (known after apply)
+      + labels           = (known after apply)
+      + name             = (known after apply)
+      + resource_version = (known after apply)
+
+      + amazonec2_config {
+          + ami                        = "ami-00c90dbdc12232b58"
+          + block_duration_minutes     = "0"
+          + encrypt_ebs_volume         = false
+          + insecure_transport         = false
+          + instance_type              = "t2.large"
+          + monitoring                 = false
+          + private_address_only       = false
+          + region                     = "eu-west-1"
+          + request_spot_instance      = false
+          + retries                    = "5"
+          + root_size                  = "16"
+          + security_group             = [
+              + "terra-ec2",
+            ]
+          + security_group_readonly    = false
+          + spot_price                 = "0.50"
+          + ssh_user                   = "ubuntu"
+          + subnet_id                  = "subnet-069f0acdccbd4001d"
+          + use_ebs_optimized_instance = false
+          + use_private_address        = false
+          + volume_type                = "gp2"
+          + vpc_id                     = "vpc-051e608e74ae8d8b6"
+          + zone                       = "c"
+        }
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: 
+rancher2_cloud_credential.nelson: Creating...
+rancher2_machine_config_v2.nelson-ec2: Creating...
+rancher2_cloud_credential.nelson: Creation complete after 8s [id=cattle-global-data:cc-7x5rf]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [1m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [1m10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [1m20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [1m30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [1m40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [1m50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [2m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [2m10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [2m20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [2m30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [2m40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [2m50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [3m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [3m10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [3m20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [3m30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [3m40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [3m50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [4m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [4m10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [4m20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [4m30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [4m40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [4m50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [5m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [5m10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [5m20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [5m30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [5m40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [5m50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [6m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [6m10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [6m20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [6m30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [6m40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [6m50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [7m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [7m10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [7m20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [7m30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [7m40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [7m50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [8m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [8m10s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [8m20s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [8m30s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [8m40s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [8m50s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [9m0s elapsed]
+rancher2_machine_config_v2.nelson-ec2: Still creating... [9m10s elapsed]
