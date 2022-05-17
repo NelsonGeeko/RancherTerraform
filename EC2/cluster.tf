@@ -2,8 +2,8 @@
 resource "rancher2_cloud_credential" "ec2login" {
   name = "ec2login"
   amazonec2_credential_config {
-    access_key = var.awsAccess
-    secret_key = var.awsSecret
+    access_key = var.aws_access_key
+    secret_key = var.aws_secret_key
   }
 }
 

@@ -1,19 +1,21 @@
-variable "rancherInstance" {
+variable "rancher_api_url" {
     description = "Target Rancher instance to deploy to"
     type = string
     default = ""
 }
 
-variable "rancherAccess" { 
+variable "rancher_access_key" { 
     description = "Rancher API Access key"
     type = string
     default = ""
+    sensitive = true
 }
 
-variable "rancherSecret" {
+variable "rancher_secret_key" {
     description = "Rancher API Secret key"
     type = string
     default = ""
+    sensitive = true
 }
 
 variable "rancherSecurity" {
@@ -38,16 +40,16 @@ variable "nodeQTY" {
     default = 1
   
 }
-variable "awsSecret" {
+variable "aws_secret_key" {
     description = "AWS Secret Key"
     type = string
-    default = ""
+    sensitive = true
 }
 
-variable "awsAccess" {
+variable "aws_access_key" {
     description = "AWS Access Key"
     type = string
-    default = ""
+    sensitive = true
 }
 
 variable "awsRegion" {

@@ -12,14 +12,14 @@ terraform {
 }
 
 provider "rancher2" {
-  api_url = var.rancherInstance
-  access_key = var.rancherAccess
-  secret_key = var.rancherSecret
+  api_url = var.rancher_api_url
+  access_key = var.rancher_access_key
+  secret_key = var.rancher_secret_key
   insecure = var.rancherSecurity
 }
 
 provider "aws" {
-  access_key = var.awsAccess
-  secret_key = var.awsSecret
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
   region = var.awsRegion
 }
