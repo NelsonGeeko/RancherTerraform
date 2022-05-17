@@ -27,7 +27,7 @@ variable "rancherSecurity" {
 variable "rancherClusterName" {
     description = "Cluster Name"
     type = string
-    default = ""
+    default = "terraform-cluster"
 }
 variable "kubeVersion" {
     description = "Kubernetes version, Currently supports RKE2 and K3s (Default K3s for speed)"
