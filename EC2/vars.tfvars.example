@@ -22,6 +22,9 @@ awsRegion = "<AWS_Region>"
 #Set AWS AMI to use for nodes, Default =ami-00c90dbdc12232b58 (Ubuntu)
 #awsAMI = "<AMI>"
 
+#Set AWS Instance Type, Default = t2.large.
+#awsInstanceType = "<AWS_INSTANCE>
+
 #REQUIRED
 #Set AWS VPC
 awsVPC = "<AWS_VPC>"

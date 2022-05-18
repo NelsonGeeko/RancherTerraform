@@ -76,6 +76,12 @@ variable "awsSubnet" {
     type = string
 }
 
+variable "awsInstanceType" {
+    description = "Instance type on AWS"
+    type = string
+    default = "t2.large"
+}
+
 # Optional Configuration
 variable "monitoring" {
     description = "Do you want to deploy monitoring?"

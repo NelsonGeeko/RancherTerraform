@@ -30,6 +30,7 @@ resource "aws_security_group" "rancher_sg_allowall" {
 resource "rancher2_machine_config_v2" "ec2instance" {
   generate_name = "ec2instance"
   amazonec2_config {
+    instance_type = var.awsInstanceType
     ami =  var.awsAMI
     region = var.awsRegion
     security_group = [aws_security_group.rancher_sg_allowall.name]
