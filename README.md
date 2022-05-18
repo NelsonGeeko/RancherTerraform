@@ -19,7 +19,7 @@ The below is an example on how to set up a "secrets.tfvars" file: <br>
 
 _(a `secrets.tfvars.example` file has been provided)_
 
-Pass this through any `terraform apply/plan` by using `terraform apply/plan -var-file=<(cat secret.tfvars vars.tfvars)`.
+Pass this through any `terraform <apply/plan/destroy>` by using `terraform <apply/plan/destroy> -var-file=<(cat secret.tfvars vars.tfvars)`.
 
 ## UPDATES
 Optional monitoring is now enabled, please use the `monitoring = true` varible in the `vars.tfvars` file to enable. <br> <br>
