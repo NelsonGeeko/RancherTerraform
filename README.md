@@ -1,6 +1,6 @@
 # RancherTerraform
 
-Scripts to create EC2 nodes via the rancher terraform provider.
+Scripts to create an EC2 RKE2 or K3s cluster via the rancher terraform provider.
 
 ## SET UP
 
