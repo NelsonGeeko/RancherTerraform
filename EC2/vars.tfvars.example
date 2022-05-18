@@ -1,26 +1,26 @@
 
 #Set security level of rancher (does it have a Signed TLS or not).
-rancherSecurity = "false"
+rancherSecurity = "true"
 
 #REQUIRED
 #Set Rancher Cluster Name
 rancherClusterName = "<CLUSTER_NAME>"
 
 #Set K8s Version, Default = v1.21.4+k3s1 (Both RKE2 and K3s are supported).
-#kubeVersion = ""
+#kubeVersion = "<K8s_Version>"
 
 #Set Node Quantity for the cluster, Default = 1
-#nodeQTY = 
+#nodeQTY = 2
 
 #REQUIRED
-#Set AWS Region, Default "eu-west-1"
+#Set AWS Region, Default = "eu-west-1"
 awsRegion = "<AWS_Region>"
 
 #Set AWS Availibility Zone, Default = c.
-#awsAvailibilityZone = ""
+#awsAvailibilityZone = "<ZONE>"
 
 #Set AWS AMI to use for nodes, Default =ami-00c90dbdc12232b58 (Ubuntu)
-#awsAMI = ""
+#awsAMI = "<AMI>"
 
 #REQUIRED
 #Set AWS VPC
@@ -32,4 +32,4 @@ awsSubnet = "<AWS_SUBNET>"
 
 #OPTIONAL CONFIGURATION
 #Install Monitoring? Default = false
-# monitoring = 
+# monitoring = true

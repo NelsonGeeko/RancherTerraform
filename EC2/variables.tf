@@ -1,20 +1,17 @@
 variable "rancher_api_url" {
     description = "Target Rancher instance to deploy to"
     type = string
-    default = ""
 }
 
 variable "rancher_access_key" { 
     description = "Rancher API Access key"
     type = string
-    default = ""
     sensitive = true
 }
 
 variable "rancher_secret_key" {
     description = "Rancher API Secret key"
     type = string
-    default = ""
     sensitive = true
 }
 
@@ -27,7 +24,6 @@ variable "rancherSecurity" {
 variable "rancherClusterName" {
     description = "Cluster Name"
     type = string
-    default = "terraform-cluster"
 }
 variable "kubeVersion" {
     description = "Kubernetes version, Currently supports RKE2 and K3s (Default K3s for speed)"
@@ -73,13 +69,11 @@ variable "awsAvailibilityZone" {
 variable "awsVPC" {
     description = "AWS VPC"
     type = string
-    default = ""
 }
 
 variable "awsSubnet" {
     description = "AWS VPC Subnet"
     type = string
-    default = ""
 }
 
 # Optional Configuration

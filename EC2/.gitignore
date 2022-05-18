@@ -1,5 +1,4 @@
 *.tfvars
-variables.tf
 *.sh
 *.tfstate
 *.tfstate.backup
