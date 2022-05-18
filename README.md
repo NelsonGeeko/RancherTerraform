@@ -14,7 +14,8 @@ The below is an example on how to set up a "secrets.tfvars" file: <br>
 `aws_access_key =  <AWS_ACCESS_KEY>` <br>
 `aws_secret_key = <AWS_SECRET_KEY>` <br>
 `rancher_api_url = <RANCHER_API_URL>` <br>
-`rancher_access_key = <RANCHER_API_ACCESS>``rancher_api_url = <RANCHER_API_URL>` <br>
+`rancher_access_key = <RANCHER_API_ACCESS>`<br>
+`rancher_api_url = <RANCHER_API_URL>` <br>
 `rancher_secret_key = <RANCHER_API_SECRET>` <br>
 
 _(a `secrets.tfvars.example` file has been provided)_
