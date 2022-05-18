@@ -81,3 +81,10 @@ variable "awsSubnet" {
     type = string
     default = ""
 }
+
+# Optional Configuration
+variable "monitoring" {
+    description = "Do you want to deploy monitoring?"
+    type = bool
+    default = false
+}

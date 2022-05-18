@@ -59,3 +59,21 @@ resource "rancher2_cluster_v2" "clusterconfig" {
     }
   }
 }
+
+data "rancher2_cluster_v2" "clusterid" {
+  name = var.rancherClusterName
+  depends_on = [
+    rancher2_cluster_v2.clusterconfig,
+  ]
+  }
+resource "rancher2_app_v2" "monitoring" {
+  count = var.monitoring ? 1 : 0
+  depends_on = [
+    rancher2_cluster_v2.clusterconfig, rancher2_machine_config_v2.ec2instance
+  ]
+  cluster_id = rancher2_cluster_v2.clusterconfig.cluster_v1_id
+  name = "rancher-monitoring"
+  namespace = "cattle-monitoring-system"
+  repo_name = "rancher-charts"
+  chart_name = "rancher-monitoring"
+}
